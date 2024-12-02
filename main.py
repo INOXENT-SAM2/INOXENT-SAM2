@@ -26,8 +26,8 @@ class CustomClient(Client):
 					prev_authors.append(author_id)
 				# Open the file here (after receiving a message)
 				with open('data/msg1.txt', encoding='utf8') as my_file1:
-					# Your code to read the file
-					# ...
+					txt1 = my_file1.read().strip() # read the file content
+					primary_text = txt1 + "\nTimestamp: " + localtime # update primary_text
 
 client = CustomClient('email', 'password') # replace your username and password here
 session_cookies = client.getSession()
